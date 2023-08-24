@@ -1,0 +1,279 @@
+\documentclass[a4paper, 11pt]{book}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+
+%\usepackage{tgadventor} % The font for the entire document can be changed here
+%\usepackage{courier}
+%\usepackage{charter}
+\usepackage{tgcursor}
+
+\usepackage{mathrsfs} 
+\usepackage{quiver} 
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+\usepackage[numbered]{mcode}
+\usepackage{float}
+\usepackage{tikz}
+    \usetikzlibrary{shapes,arrows}
+    \usetikzlibrary{arrows,calc,positioning}
+
+    \tikzset{
+        block/.style = {draw, rectangle,
+            minimum height=1cm,
+            minimum width=1.5cm},
+        input/.style = {coordinate,node distance=1cm},
+        output/.style = {coordinate,node distance=4cm},
+        arrow/.style={draw, -latex,node distance=2cm},
+        pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+        sum/.style = {draw, circle, node distance=1cm},
+    }
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{amsmath,amsfonts,amsthm, amssymb}
+\usepackage{array}
+\usepackage[all,textures]{xy}
+\usepackage{graphicx}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{tabu}
+\usepackage{longtable}
+
+\theoremstyle{plain}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{theorem1}{Theorem 1}
+\newtheorem*{notation}{Notation}
+\newtheorem*{corollary1.1}{Corollary 1.1}
+\newtheorem*{theorem2}{Theorem 2}
+\newtheorem*{corollary2.1}{Corollary 2.1}
+\newtheorem*{remarks}{Remarks}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{Corollary}{Corollary}
+
+    
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+
+% Define solution environment
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Original packages, custom environments, and custom commands below
+  \usepackage{amsmath,amsfonts,amsthm, amssymb}
+  \usepackage{fullpage}
+  \usepackage{array}
+  \usepackage[all,textures]{xy}
+  \usepackage{graphicx}
+  \usepackage{alltt}
+  \usepackage{listings}
+  \usepackage{float}
+  \usepackage{tabu}
+  \usepackage{longtable}
+  \usepackage{lipsum}
+  \usepackage[T1]{fontenc}
+  
+  \theoremstyle{plain}
+  \newtheorem{innercustomgeneric}{\customgenericname}
+\providecommand{\customgenericname}{}
+\newcommand{\newcustomtheorem}[2]{%
+  \newenvironment{#1}[1]
+  {%
+   \renewcommand\customgenericname{#2}%
+   \renewcommand\theinnercustomgeneric{##1}%
+   \innercustomgeneric
+  }
+  {\endinnercustomgeneric}
+}
+
+\newcustomtheorem{definition}{Definition}
+\newcustomtheorem{lemma}{Lemma}
+
+\newcommand{\mb}{\mathbf}
+\newcommand{\arr}{\rightarrow}
+\newcommand{\op}{\text{op}}
+\newcommand{\inv}{{-1}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\dom}{\text{dom}}
+\newcommand{\p}{\prime}
+\newcommand{\obj}{\text{obj}}
+\newcommand{\id}{\text{Id}}
+\newcommand{\mc}{\mathcal}
+\newcommand{\warr}{\xrightarrow}
+\newcommand{\tb}{\textbf}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\cod}{\text{cod}}
+\newcommand{\Co}{\mathbf{C}^op}
+\newcommand{\x}{\times}
+\newcommand{\ran}{\text{ran}}
+\newcommand{\D}{\mb{D}}
+\newcommand{\F}{\mc{F}}
+\newcommand{\G}{\mc{G}}
+\newcommand{\iso}{\cong}
+\newcommand{\tarr}{\twoheadrightarrow}
+\newcommand{\ovl}{\overline}
+\newcommand{\mon}{\rightarrowtail}
+\newcommand{\la}{\langle} 
+\newcommand{\ra}{\rangle}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\fst}{\text{fst}} 
+\newcommand{\snd}{\text{snd}}
+\newcommand{\Arr}{\text{Arr}}
+  \setlength{\parindent}{0pt}
+
+  \setlength{\parindent}{0pt}
+ 
+ 
+ \newtheorem{thm}{Exercise}
+\begin{document}
+  \begin{titlepage}
+	\centering % Center everything on the title page
+	\scshape % Use small caps for all text on the title page
+	\vspace*{1.5\baselineskip} % White space at the top of the page
+% ===================
+%	Title Section 	
+% ===================
+
+	\rule{13cm}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal rule
+	\rule{13cm}{0.4pt} % Thin horizontal rule
+	
+		\vspace{0.75\baselineskip} % Whitespace above the title
+% ========== Title ===============	
+	{	\Huge Algebra: Chapter 0\\ 
+			\vspace{4mm}
+		Book by Paolo Aluffi \\	}
+% ======================================
+		\vspace{0.75\baselineskip} % Whitespace below the title
+	\rule{13cm}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
+	\rule{13cm}{1.6pt} % Thick horizontal rule
+	
+		\vspace{1.75\baselineskip} % Whitespace after the title block
+% =================
+%	Information	
+% =================
+	{\large : 
+		\vspace*{1.2\baselineskip}
+	} \\
+	\vfill
+
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begingroup
+\let\cleardoublepage\clearpage
+\tableofcontents
+\endgroup
+\addcontentsline{toc}{chapter}{III. Rings and modules}
+\chapter*{III. Rings and modules}
+  \begin{exercise} (Section 1, 17)
+    Explain in what sense $R[x]$ agrees with monoid ring $R[\N]$.
+  \end{exercise}
+  \begin{proof}
+    We define homomorphism $f:R[x] \arr R[\N]$ so that $f \left( \sum_{i=0}^\infty a_i x^i \right) = \sum_{i=0}^\infty a_i \cdot i$. It is easy to see that is indeed a homomorphism. Define $g: R[\N] \arr R[x]$ as $g\left( \sum_{i=0}^\infty a_i i \right)=\sum_{i=0^\infty} a_i x^i$. Again, it is easy to see it is a homomorphism. We now prove that they are infact isomorphism. For any $\sum_{i=0}^\infty a_i x^i \in R[x]$, we have 
+    \begin{align*}
+      g \circ f \left(\sum_{i=0}^\infty a_i x^i \right) &= g \left(f \left(\sum_{i=0}^\infty a_i x^i \right) \right) \\
+      &=g \left( \sum_{i=0}^\infty a_i \cdot i \right) \\
+      &=\sum_{i=0}^\infty a_i x^i.
+    \end{align*}
+    Thus, $g \circ f=1_{R[x]}$. Similarly, we can show $f \circ g = 1_{R[\N]}$. Hence, $R[x] \simeq R[\N]$.
+  \end{proof}
+
+  \begin{exercise}
+    (Section 2, 13) 
+    Verify that the 'componentwise' product $R_1 \times R_2$ of two rings satisfies the universal property for products in a category.
+  \end{exercise}
+  \begin{proof}
+    In general, the following result holds.
+    \begin{theorem}
+      Let $I$ be an indexed set. Consider some family of rings $(R_i)_{i \in I}$. Then the componentwise product $\prod_{i \in I} R_i$ satisfy the ump of indexed product in $\mb{Rings}$. 
+    \end{theorem}
+      Let's first define the ump of indexed product. \\
+      \textbf{Unique mapping property of product of an indexed family.} Let $\C$ be a category with binary products. The object $\prod_{i \in I} X_i$ is said to be product of indexed family $(X_i)_{i \in I}$ if there exists morphism $\pi_i:\prod_{i \in I} X_i \arr X_i$ for each $i \in I$ and for any object $A$ such that there are morphism $x_i: A \arr X_i$ for each $i$, there exists unique arrow $f:A \arr \prod_{i \in I} X_i$ with the property that $x_i=\pi_i f$ for any $i \in I$. In other, the diagram 
+      \[\begin{tikzcd}
+        && A \\
+        \\
+        && {\prod_{i \in I} X_i} \\
+        \\
+        {X_j} &&&& {X_k}
+        \arrow["{\exists !f}"{description}, dashed, from=1-3, to=3-3]
+        \arrow["{\pi_j}"{description}, from=3-3, to=5-1]
+        \arrow["{\pi_k}"{description}, from=3-3, to=5-5]
+        \arrow["{x_j}"'{description}, from=1-3, to=5-1]
+        \arrow["{x_k}"'{description}, from=1-3, to=5-5]
+      \end{tikzcd}\]
+      must commute for all $j,k \in I$.
+\newpage
+      Let $\pi_i: \prod_{i \in I} R_i \arr R_i$ be the projection homo. Consider a ring $S$ such that there are ring homo $s_i: S \arr R_i$ for each $i$. Define $f:S \arr \prod_{i \in I} R_i$ so that $x \mapsto (s_i(x))_{i \in I}$ for any $x \in S$. It is easy to see $f$ is unique homo making 
+      \[\begin{tikzcd}
+        && S \\
+        \\
+        && {\prod_{i \in I} R_i} \\
+        \\
+        {R_j} &&&& {R_k}
+        \arrow["{\exists !f}"{description}, dashed, from=1-3, to=3-3]
+        \arrow["{\pi_j}"{description}, from=3-3, to=5-1]
+        \arrow["{\pi_k}"{description}, from=3-3, to=5-5]
+        \arrow["{s_j}"'{description}, from=1-3, to=5-1]
+        \arrow["{s_k}"'{description}, from=1-3, to=5-5]
+      \end{tikzcd}\]
+      commute for any $j,k \in I$. Hence, $\prod_{i \in I} R_i$ statisfy ump of product of indexed family. As an corollary of this result, we have $R_1 \times R_2$ satisfy ump of binary product.
+    \end{proof}
+  
+
+  \begin{exercise}
+    (Section 2, 14)
+    Verify that $\Z[x_1,x_2]$ satisfies the universal property for the coproducts of two copies of $\Z[x]$ in the category of commutative rings. Explain why it does not satisfy it in $\mb{Rings}$.
+  \end{exercise}
+  \begin{proof}
+    In general, we have the following result.
+    \begin{theorem}
+      Let $I$ be any index set and let $(\Z[x_i])_{i \in I}$ be indexed family of set of polynomial with integer coefficients. Then $\Z[x_i]_{i \in I}$ satisfy the appropriate unique mapping property of indexed family of coproduct. That is 
+      $$ \coprod_{i \in I} \Z[x_i] \simeq \Z[x_i]_{i \in I}.$$
+    \end{theorem}
+    Before we get into the proof of it, let's first define the required unique mapping property! \\
+\newpage
+    \textbf{Unique mapping property of coproduct of an idexed family} Let $\C$ be a category with binary coproducts. The object $\coprod_{i \in I} X_i$ is said to be the product of indexed family $(X_i)_{i \in I}$ if there are inclusion morphism $e_i:X_i \arr \coprod_{i \in I} X_i$ for each $i \in I$, and for any object $A$ such that there are morphisms $x_i:X_i \arr A$ for each $i$, then there exists an unique morphism $f:\coprod_{i \in I} X_i \arr A$ with the property $f \circ e_i = x_i$. In other words, $f$ make 
+    \[\begin{tikzcd}
+      &&& A \\
+      \\
+      \\
+      &&& {\coprod_{i \in I} X_i} \\
+      \\
+      {X_i} &&&&&& {X_j}
+      \arrow["{\exists ! f}"{description}, dashed, from=4-4, to=1-4]
+      \arrow["{x_i}"{description}, from=6-1, to=1-4]
+      \arrow["{x_j}"{description}, from=6-7, to=1-4]
+      \arrow["{e_i}"{description}, from=6-1, to=4-4]
+      \arrow["{e_j}"{description}, from=6-7, to=4-4]
+    \end{tikzcd}\]
+    commute for any $i,j \in I$.
+
+  Now, we will proceed to show that $\Z[x_i]_{i \in I}$ posses this UMP. It is easy to see that for each $i$, we have inclusion $e_i:\Z[x_i] \arr \Z[x_i]_{i \in I}$. Consider a ring $S$ such that there are morphism $s_i:\Z[x_i] \arr S$ for every $i$. Define $f:\Z[x_i]_{i \in I} \arr S$ so that 
+  \begin{align*}
+    f \left( \sum m_{j_i} x_i^{j_i} \right)_{i \in I} &= \sum f(m_{j_i} f (x_i)^{j_i}) \\
+    &= \sum k(m_{j_i}) s_i(x_i^{j_i}) \\
+  \end{align*}
+  for any polynomial in $\Z[x_i]_{i \in I}$, where $k:\Z \arr S$ is the unique ring homomorphism (as $\Z$ is initial in $\mb{Rings}$). Note that the summation is necessarily finite. It is easy to see that $f$ is ring morphism and also unique one at that to satisfy 
+  \[\begin{tikzcd}
+    &&& S \\
+    \\
+    \\
+    &&& {Z[x_i]_{i \in I}} \\
+    \\
+    {\Z[x_i]} &&&&&& {\Z[x_j]}
+    \arrow["{\exists ! f}"{description}, dashed, from=4-4, to=1-4]
+    \arrow["{s_i}"{description}, from=6-1, to=1-4]
+    \arrow["{s_j}"{description}, from=6-7, to=1-4]
+    \arrow["{e_i}"{description}, from=6-1, to=4-4]
+    \arrow["{e_j}"{description}, from=6-7, to=4-4]
+  \end{tikzcd}\]
+  Hence, $\Z[x_i]_{i \in I}$ satisfy UMP of indexed family of coporducts of $(\Z[x_i])_{i \in I}$. As an easy corollary of the theorem, we have $\Z[x_1,x_2] \simeq \Z[x_1] \coprod \Z[x_2]$.
+\end{proof}
+\end{document}
